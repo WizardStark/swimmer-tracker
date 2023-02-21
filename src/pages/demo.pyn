@@ -1,0 +1,16 @@
+def method(args)
+    if check1
+        if check2
+            return 'a'
+        else
+            return b
+        end
+    else
+        return 'a'
+    end
+end
+
+def method(args)
+    return b if check1 && check2
+    'a'
+end
