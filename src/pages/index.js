@@ -1,26 +1,24 @@
-import Link from 'next/link'
-import Navbar from '@/components/Navbar'
+import React from 'react';
 
-
-export default function Home() {
+function Home() {  
   return (
-    <>
+    <div >
+      <h1>text</h1>
       <div>
-        <Navbar />
+        <h1>text</h1>
+        <div style={{padding: '12px'}}>
+          <h1>text</h1>
+          <div>
+            <h1>text</h1>
+            <h1>text</h1>
+            <h1>text</h1>
+            <h1>text</h1>
+          </div>
+        </div>
       </div>
       
-      <div>
-        <Link href='/statistics'>
-          <h1>Statistics</h1>
-        </Link>
-      </div>
+    </div>
+  );
+};
 
-      <div>
-        <Link href='/overview'>
-          <h1>Overview</h1>
-        </Link>
-      </div>
-
-    </>
-  )
-}
+export default Home;
