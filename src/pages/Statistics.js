@@ -1,5 +1,6 @@
 import { React, useState } from "react";
-import { Table, Radio, Tabs, Card, Space, Input } from "antd";
+import { Table, Radio, Tabs, Card, Space, Input, Button } from "antd";
+
 
 function Statistics() {
   const dataSource = [
@@ -16,13 +17,6 @@ function Statistics() {
       address: "10 Downing Street",
     },
   ];
-
-  const [query, setQuery] = useState('')
-  const onChange = (e) => {
-    setQuery(e.target.value);
-  };
-
-  const SessionDates = ['Tab1','Tab2','Tab3','Tab4','Tab5','Tab6','Tab7','Tab8','2022-02-03','2021-03-02']
   const columns = [
     {
       title: "Name",
@@ -75,6 +69,13 @@ function Statistics() {
       key: "address",
     },
   ];
+  
+  const SessionDates = ['Tab1','Tab2','Tab3','Tab4','Tab5','Tab6','Tab7','Tab8','2022-02-03','2021-03-02']
+
+  const [query, setQuery] = useState('')
+  const onChange = (e) => {
+    setQuery(e.target.value);
+  };
 
   return (
     <div>
@@ -106,7 +107,13 @@ function Statistics() {
             return {
               label: val,
               key: id,
-              children: <Table dataSource={dataSource} columns={columns} pagination={false} />,
+              children:    
+                <div>
+                  <Space direction="vertical" size="middle" style={{ display: 'flex' }}>
+                    <Table dataSource={dataSource} columns={columns} pagination={false} />
+                    <Button type="primary">Add Session</Button>
+                  </Space>
+                </div> ,
             };
         })}
       />
