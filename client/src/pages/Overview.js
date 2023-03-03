@@ -1,24 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 
-function Overview() {  
-  return (
-    <div >
-      <h1>text</h1>
-      <div>
-        <h1>text</h1>
-        <div style={{padding: '12px'}}>
-          <h1>text</h1>
-          <div>
-            <h1>text</h1>
-            <h1>text</h1>
-            <h1>text</h1>
-            <h1>text</h1>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  );
-};
+function Overview() {
+  const [data, setData] = useState([{}]);
+
+  useEffect(() => {
+    fetch("/members")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        console.log(data);
+      });
+  }, []);
+
+  return <div></div>;
+}
 
 export default Overview;
