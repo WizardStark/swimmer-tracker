@@ -58,7 +58,7 @@ function PageLayout({ children }) {
           textAlign: "center",
         }}
       >
-        Piet ©2023 Jouma
+        ©2023
       </Footer>
     </Layout>
   );
